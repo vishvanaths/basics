@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - KthElementFinder",
+            "request": "launch",
+            "mainClass": "KthElementFinder",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CloudHopper<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "CloudHopper",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DoubleStackQueue<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "DoubleStackQueue",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DuplicatesRemovalLinkList<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "DuplicatesRemovalLinkList",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OneEditAway<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "OneEditAway",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OneEditAway1<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "OneEditAway1",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PermutationPalindrome<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "PermutationPalindrome",
+            "projectName": "codinginterview_3f402987"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PermutationPalindromeWithBitManipulation<codinginterview_3f402987>",
+            "request": "launch",
+            "mainClass": "PermutationPalindromeWithBitManipulation",
+            "projectName": "codinginterview_3f402987"
+        }
+    ]
+}
