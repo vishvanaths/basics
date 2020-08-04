@@ -44,13 +44,14 @@ public class SortingAlgo {
         quickSort(a, pIndex + 1, end);
     }
 
-    private static int randomizePartition(int[] a, int start, int end) {
-        int pivot = (int) (Math.random() * (end - start + 1) + start);
-        a[end] = a[end] + a[pivot];
-        a[pivot] = a[end] - a[pivot];
-        a[end] = a[end] - a[pivot];
-        return partition(a, start, end);
-    }
+    // Do later
+    // private static int randomizePartition(int[] a, int start, int end) {
+    //     int pivot = (int) (Math.random() * (end - start + 1) + start);
+    //     a[end] = a[end] + a[pivot];
+    //     a[pivot] = a[end] - a[pivot];
+    //     a[end] = a[end] - a[pivot];
+    //     return partition(a, start, end);
+    // }
 
     
     private static int partition(int[] a, int start, int end) {
