@@ -14,6 +14,7 @@ public class BinaryTreeTest {
         System.out.println(bt.search(21, bt.root));
         System.out.println("Min : " + findMin(bt.root));
         System.out.println("Max : " + findMax(bt.root));
+        System.out.println("Height : " + findTreeHeight(bt.root));
     }
 
     private static Integer findMax(TreeNode root) {
@@ -32,6 +33,17 @@ public class BinaryTreeTest {
             root =  root.left;
         }
         return t != null ? t.data : null;
+    }
+
+    private static int findTreeHeight(TreeNode node) {
+        if((node.left == null && node.right != null) ||
+            (node.left != null && node.right == null)){
+            return 1;
+        }else if(node.left == null && node.right == null){
+            return 0;
+        }else{
+            return Math.max(findTreeHeight(node.left),findTreeHeight(node.right)) + 1;
+        }
     }
 
 
