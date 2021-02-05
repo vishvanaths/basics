@@ -3,10 +3,10 @@ public class StringRotateMatch {
         String s1 = "amazon";
         String s2 = "azonam";
 
-        System.out.println(isRatateStringMatch(s1, s2));
+        System.out.println(isRotatedStringMatch(s1, s2));
     }
 
-    private static boolean isRatateStringMatch(String s1, String s2) {
+    private static boolean isRotatedStringMatch(String s1, String s2) {
         if(s1.length() != s2.length()){
             return false;
         }

@@ -2,14 +2,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class SortingAlgo {
-    public static Scanner sc = new Scanner(System.in); 
+    public static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         int[] a = {4,5,2,3,6,9,12,0,1,2};
         System.out.println("Select algorithm \n 1. Selection sort \n 2. Bubble Sort");
         System.out.println(" 3. Insertion sort \n 4. Merge Sort \n 5. Quick Sort");
-        System.out.print("Selection ====>");
+        System.out.print(" Selection ====>");
+
         int i = Integer.parseInt(sc.nextLine().trim());
         System.out.println(" Input:" + arrayToString(a));
+
         switch(i){
             case 1 :
             selectionSort(a);
@@ -32,7 +35,7 @@ public class SortingAlgo {
             break;                        
         }
 
-        System.out.println("Output:" + arrayToString(a));
+        System.out.println(" Output:" + arrayToString(a));
     }
 
     private static void quickSort(int[] a, int start, int end) {
@@ -60,16 +63,24 @@ public class SortingAlgo {
 
         for(int i=start;i<end; i++){
             if(a[i] <= a[pivot]){
-                a[pIndex] = a[pIndex] + a[i];
-                a[i] = a[pIndex] - a[i];
-                a[pIndex] = a[pIndex] - a[i];
+//                a[pIndex] = a[pIndex] + a[i];
+//                a[i] = a[pIndex] - a[i];
+//                a[pIndex] = a[pIndex] - a[i];
+                swap(a, pIndex, i);
                 pIndex++;
             }
         }
-        a[pIndex] = a[pIndex] + a[pivot];
-        a[pivot] = a[pIndex] - a[pivot];
-        a[pIndex] = a[pIndex] - a[pivot];
+//        a[pIndex] = a[pIndex] + a[pivot];
+//        a[pivot] = a[pIndex] - a[pivot];
+//        a[pIndex] = a[pIndex] - a[pivot];
+        swap(a, pIndex, pivot);
         return pIndex;
+    }
+
+    private static void swap(int[] a, int i, int j){
+        a[i] = a[i] + a[j];
+        a[j] = a[i] - a[j];
+        a[i] = a[i] - a[j];
     }
 
     private static int[] mergeSort(int[] a) {
@@ -79,7 +90,7 @@ public class SortingAlgo {
         int breakIndex = (int) a.length/2;
         
         int[] leftArray = mergeSort(Arrays.copyOfRange(a, 0, breakIndex));
-        int[] rightArray = mergeSort(Arrays.copyOfRange(a, breakIndex, a.length));
+        int[] rightArray = mergeSort(Arrays.copyOfRange(a, breakIndex + 1, a.length));
         return mergeArrays(leftArray, rightArray);
     }
 
@@ -142,7 +153,6 @@ public class SortingAlgo {
 
             System.out.println(arrayToString(a));
         }
-
     }
     
     private static void bubbleSort(int[] a) {
@@ -161,7 +171,6 @@ public class SortingAlgo {
             }
             System.out.println(arrayToString(a));
         }
-
 	}
 
     public static String arrayToString(int[] a) {

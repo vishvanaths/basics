@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Collections;
 
 public class CoinChangeCalculator {
     public static void main(String[] args) {
