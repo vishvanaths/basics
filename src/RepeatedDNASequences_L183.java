@@ -56,6 +56,7 @@ public class RepeatedDNASequences_L183 {
 
         }
         repeatedSequence.addAll(strings);
+
         return repeatedSequence;
     }
 }
