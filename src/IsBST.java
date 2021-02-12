@@ -13,8 +13,8 @@ public class IsBST {
         if(node == null)
             return true;
         
-        if((min != null && node.data <= min) || (max != null && max < node.data))
+        if((min != null && node.val <= min) || (max != null && max < node.val))
             return false;
-        return isBST(node.left, min, node.data) && isBST(node.right, node.data, max);
+        return isBST(node.left, min, node.val) && isBST(node.right, node.val, max);
     }
 }

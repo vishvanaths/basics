@@ -34,12 +34,12 @@ public class SerializeDeserializeBinaryTree {
                 queue.add(tr.left);
                 queue.add(tr.right);
             }
-            sb.append(tr == null ? "null" : tr.data).append(",");
+            sb.append(tr == null ? "null" : tr.val).append(",");
         }
         return sb.toString().substring(0, sb.toString().length() - 1);
     }
 
-    // Decodes your encoded data to tree.
+    // Decodes your encoded val to tree.
     public static TreeNode deserialize(final String data) {
         final String[] strs = data.split(",");
 
@@ -64,8 +64,8 @@ public class SerializeDeserializeBinaryTree {
         return root;
     }
 
-//    public static TreeNode deserialize(final String data) {
-//        final String[] strs = data.split(",");
+//    public static TreeNode deserialize(final String val) {
+//        final String[] strs = val.split(",");
 //
 //        TreeNode root = new TreeNode(Integer.parseInt(strs[0]));// null check needed
 //

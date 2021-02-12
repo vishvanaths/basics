@@ -45,7 +45,7 @@ public class BinaryTreeTest {
             t = root;
             root = root.right;
         }
-        return t != null ? t.data : null;
+        return t != null ? t.val : null;
     }
 
     private static int findMin(TreeNode root) {
@@ -54,7 +54,7 @@ public class BinaryTreeTest {
             t = root;
             root = root.left;
         }
-        return t != null ? t.data : null;
+        return t != null ? t.val : null;
     }
 
     private static int findTreeHeight(TreeNode node) {
@@ -73,7 +73,7 @@ class BinaryTree {
     public TreeNode insert(int data, TreeNode node) {
         if (node == null) {
             node = new TreeNode(data);
-        } else if (data <= node.data) {
+        } else if (data <= node.val) {
             node.left = insert(data, node.left);
         } else {
             node.right = insert(data, node.right);
@@ -88,21 +88,21 @@ class BinaryTree {
     public String preOrder(TreeNode node) {
         StringBuilder sb = new StringBuilder();
         if(node == null) return "";
-        sb.append(node.data + " " + preOrder(node.left) + " " + preOrder(node.right));
+        sb.append(node.val + " " + preOrder(node.left) + " " + preOrder(node.right));
         return sb.toString();
     }
 
     public String inOrder(TreeNode node) {
         StringBuilder sb = new StringBuilder();
         if(node == null) return "";
-        sb.append(inOrder(node.left) + " " + node.data + " " + inOrder(node.right));
+        sb.append(inOrder(node.left) + " " + node.val + " " + inOrder(node.right));
         return sb.toString();
     }
 
     public String postOrder(TreeNode node) {
         StringBuilder sb = new StringBuilder();
         if(node == null) return "";
-        sb.append(postOrder(node.left) + " " + postOrder(node.right) + node.data + " ");
+        sb.append(postOrder(node.left) + " " + postOrder(node.right) + node.val + " ");
         return sb.toString();
     }
 
@@ -112,7 +112,7 @@ class BinaryTree {
         sc.add(this.root);
         while (!sc.isEmpty()) {
             TreeNode n = sc.pop();
-            sb.append(n.data + "|");
+            sb.append(n.val + "|");
 
             if (n.right != null)
                 sc.push(n.right);
@@ -126,10 +126,10 @@ class BinaryTree {
         if (node == null) {
             return false;
         }
-        if (data == node.data) {
+        if (data == node.val) {
             return true;
         } else {
-            if (data < node.data) {
+            if (data < node.val) {
                 return search(data, node.left);
             } else {
                 return search(data, node.right);
@@ -152,7 +152,7 @@ class BinaryTree {
         q.add(this.root);
         while (!q.isEmpty()) {
             TreeNode n = q.remove();
-            sb.append(n.data + "|");
+            sb.append(n.val + "|");
             if (n.left != null)
                 q.add(n.left);
             if (n.right != null)
@@ -163,17 +163,17 @@ class BinaryTree {
 }
 
 class TreeNode {
-    int data;
+    int val;
     TreeNode left, right;
 
-    public TreeNode(int data) {
-        this.data = data;
+    public TreeNode(int val) {
+        this.val = val;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.data);
+        sb.append(this.val);
         if (this.left != null)
             sb.append("|" + this.left.toString());
         if (this.right != null)

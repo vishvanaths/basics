@@ -17,9 +17,9 @@ public class BinaryTreeMaximumPathSum {
 
         int left_gain = Math.max(calculateMaxGain(node.left), 0);
         int right_gain = Math.max(calculateMaxGain(node.right), 0);
-        int curr_gain = node.data + left_gain + right_gain;
+        int curr_gain = node.val + left_gain + right_gain;
         MAXGAIN = Math.max(MAXGAIN, curr_gain);
-        return node.data + Math.max(left_gain, right_gain);
+        return node.val + Math.max(left_gain, right_gain);
 
     }
 }

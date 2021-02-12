@@ -1,6 +1,4 @@
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MaxDistanceBetweenNodeAndAncestor {
@@ -16,12 +14,12 @@ public class MaxDistanceBetweenNodeAndAncestor {
             return 0;
         }
 
-        return traverseAndFind(node, node.data, node.data);
+        return traverseAndFind(node, node.val, node.val);
     }
 
     private static int traverseAndFind(TreeNode node, int min, int max) {
-        min = Math.min(node.data, min);
-        max = Math.max(node.data, max);
+        min = Math.min(node.val, min);
+        max = Math.max(node.val, max);
 
         if(node.right == null && node.left == null){
             return Math.abs(max-min);

@@ -12,7 +12,7 @@ public class SumOfLeftLeaves_L404 {
             return 0;
         }
         if(node.left == null && node.right == null){
-            return left ? node.data : 0;
+            return left ? node.val : 0;
         }
         return calculateLeftSum(node.left, true) +
                 calculateLeftSum(node.right, false);

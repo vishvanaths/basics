@@ -18,7 +18,7 @@ public class KthSmallestElementBST_L230 {
         findWithInOrder(node.left, tracking, k);
         tracking[0] += 1;
         if(tracking[0] == k){
-            tracking[1] = node.data;
+            tracking[1] = node.val;
             return;
         }
         findWithInOrder(node.right, tracking, k);
@@ -34,7 +34,7 @@ public class KthSmallestElementBST_L230 {
                 root = root.left;
             }
             root = stack.pop();
-            if (--k == 0) return root.data;
+            if (--k == 0) return root.val;
             root = root.right;
         }
     }

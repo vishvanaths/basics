@@ -15,7 +15,7 @@ public class BinaryTreeRightSideView {
         while(!nodeQueue.isEmpty()){
             for(int i=0;i<nodeQueue.size();i++){
                 TreeNode node = nodeQueue.poll();
-                if(i == 0)rightSideViewList.add(node.data);
+                if(i == 0)rightSideViewList.add(node.val);
                 if(node.right != null) nodeQueue.offer(node.right);
                 if(node.left != null) nodeQueue.offer(node.left);
             }

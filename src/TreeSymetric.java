@@ -26,7 +26,7 @@ public class TreeSymetric {
     private static boolean removeFromStack(TreeNode rightTree, Queue<Integer> queue) {
         if(rightTree != null){
             boolean right = removeFromStack(rightTree.right, queue);
-            boolean self = queue.remove() == rightTree.data ; 
+            boolean self = queue.remove() == rightTree.val;
             boolean left =removeFromStack(rightTree.left, queue);
             
             return left && self && right;
@@ -38,7 +38,7 @@ public class TreeSymetric {
     private static void addToStack(TreeNode left, Queue<Integer> queue) {
         if(left != null){
             addToStack(left.left, queue);
-            queue.add(left.data);
+            queue.add(left.val);
             addToStack(left.right, queue);
         }
     }

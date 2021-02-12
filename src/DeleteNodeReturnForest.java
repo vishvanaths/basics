@@ -18,7 +18,7 @@ public class DeleteNodeReturnForest {
         }
         
         removeNodes(root, toDeleteSet, newForest);
-        if(!toDeleteSet.contains(root.data)){
+        if(!toDeleteSet.contains(root.val)){
             newForest.add(root);
         }
         return newForest;        
@@ -32,7 +32,7 @@ public class DeleteNodeReturnForest {
         node.left = removeNodes(node.left, toDeleteSet, newForest);
         node.right = removeNodes(node.right, toDeleteSet, newForest);
 
-        if(toDeleteSet.contains(node.data)){
+        if(toDeleteSet.contains(node.val)){
             if(node.left != null) newForest.add(node.left);
             if(node.right != null) newForest.add(node.right);
             return null;

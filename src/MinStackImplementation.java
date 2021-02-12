@@ -20,7 +20,7 @@ public class MinStackImplementation {
 class MinStack<T> {
     StackNode<T> top = null;
 
-    /** initialize your data structure here. */
+    /** initialize your val structure here. */
     public MinStack() {
         top = null;
     }
