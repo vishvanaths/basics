@@ -1,4 +1,4 @@
-public interface SubarrayProductLessThanK_L713 {
+public class SubarrayProductLessThanK_L713 {
     public static void main(String[] args) {
         int[] nums = new int[]{10, 5, 2, 6};
         int k = 100;
