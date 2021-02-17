@@ -9,7 +9,7 @@ public class FindtheCelebrity_L266 {
         }
 
         for(int i=0; i<n; i++){
-            if((i != candidate && knows(candidate, i)) || !knows(candidate, i)){
+            if((i != candidate && knows(candidate, i)) || !knows(i, candidate)){
                 return -1;
             }
         }

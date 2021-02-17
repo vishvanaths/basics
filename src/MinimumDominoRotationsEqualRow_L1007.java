@@ -15,7 +15,7 @@ public class MinimumDominoRotationsEqualRow_L1007 {
         minRotation = Math.min(minRotation, numberOfRotations(A[0], B, A));
         minRotation = Math.min(minRotation, numberOfRotations(B[0], B, A));
 
-        return minRotation;
+        return minRotation == Integer.MAX_VALUE? -1 : minRotation;
     }
 
     private static int numberOfRotations(int target, int[] a, int[] b) {
