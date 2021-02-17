@@ -50,7 +50,7 @@ public class LetterCombinationsPhoneNumber_L17 {
 
         final String dialerString = NUMBER_STRING_MAP.get(digits.charAt(index) - '0');
         for (int i = 0; i < dialerString.length(); i++) {
-            letterCombiner(digits, index+1, s + dialerString.charAt(i), combinations);
+            letterCombiner(digits, index + 1, s + dialerString.charAt(i), combinations);
         }
     }
 }
