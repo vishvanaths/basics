@@ -21,7 +21,7 @@ public class DecodeWays {
                 dp[i] = dp[i] + dp[i-1];
             }
 
-            if(doubleDigit > 10 && doubleDigit <=26){
+            if(doubleDigit >= 10 && doubleDigit <=26){
                 dp[i] = dp[i] + dp[i-2];
             }
         }
