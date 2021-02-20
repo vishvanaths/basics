@@ -17,7 +17,7 @@ public class The3SumClosest_L16 {
 
 
         for(int i=0; i< nums.length; i++){
-            int a_pointer = 0;
+            int a_pointer = i+1;
             int b_pointer = nums.length - 1;
             while(a_pointer < b_pointer){
                 int value = nums[a_pointer] + nums[i] + nums[b_pointer];
