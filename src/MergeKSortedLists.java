@@ -14,7 +14,7 @@ public class MergeKSortedLists {
         printList(mergeKLists(ls));
     }
 
-    private static ListNode createList(int[] list) {
+    public static ListNode createList(int[] list) {
         ListNode nList = null;
         ListNode tmp = null;
         for (int i : list) {
