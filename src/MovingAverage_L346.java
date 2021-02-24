@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class MovingAverage_L346 {
     public static void main(String[] args) {
         MovingAverage_L346 movingAverage = new MovingAverage_L346(5);
