@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -35,6 +37,25 @@ public class MergedIntervals_L56 {
             mergedIntervals[j++][1] = i.end;
         }
         return mergedIntervals;
+    }
+
+
+    //Slow solution
+    public int[][] merge_n(int[][] intervals) {
+        if(intervals == null || intervals.length == 0) return intervals;
+
+        Arrays.sort(intervals, (o1, o2) -> o1[0]-o2[0]);
+        LinkedList<int[]> mIntervals = new LinkedList<>();
+
+        for(int i=0; i < intervals.length; i++){
+            int[] interval = intervals[i];
+            if(mIntervals.isEmpty() || mIntervals.getLast()[1] < interval[0]){
+                mIntervals.add(interval);
+            }else{
+                mIntervals.getLast()[1] = Math.max(interval[1], mIntervals.getLast()[1]);
+            }
+        }
+        return mIntervals.toArray(new int[mIntervals.size()][]);
     }
 }
 
