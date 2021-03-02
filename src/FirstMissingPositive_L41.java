@@ -43,7 +43,7 @@ public class FirstMissingPositive_L41 {
         }
 
         if(nums[0] > 0){
-            return MAX_NUM+1;
+            return MAX_NUM;
         }
         return MAX_NUM+1;
     }
