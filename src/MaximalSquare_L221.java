@@ -1,9 +1,9 @@
 public class MaximalSquare_L221 {
     public static void main(String[] args) {
-
+        System.out.println(maximalSquare(new char[][]{{}}));
     }
 
-    public int maximalSquare(char[][] matrix) {
+    public static int maximalSquare(char[][] matrix) {
         int result = 0;
         int[][] dp = new int[matrix.length][matrix[0].length];
         int answer = 0;
