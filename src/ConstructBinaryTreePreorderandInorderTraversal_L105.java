@@ -24,7 +24,7 @@ public class ConstructBinaryTreePreorderandInorderTraversal_L105 {
         }
 
         node.left = treeCreator(preOrderStart+1, inOrderStart, inIndex-1, preorder, inorder);
-        node.right = treeCreator(preOrderStart+inIndex - inOrderStart + 1, inIndex+1, inOrderEnd, preorder, inorder);
+        node.right = treeCreator(preOrderStart + inIndex - inOrderStart + 1, inIndex+1, inOrderEnd, preorder, inorder);
 
         return node;
     }

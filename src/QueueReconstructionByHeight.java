@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
 public class QueueReconstructionByHeight {
     public static void main(String[] args) {
         int[][] people = {{7,0}, {4,4}, {7,1}, {5,0},{6,1}, {5,2}};
@@ -5,13 +10,20 @@ public class QueueReconstructionByHeight {
     }
 
     public static int[][] reconstructQueue(int[][] people) {
-        for(int i=0; i< people.length; i++){
-            for(int j=0; j< people.length; j++){
-                // if()
+        Arrays.sort(people, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] o1, int[] o2){
+                return o1[0] == o2[0] ? o1[1] -o2[1] : o2[0] - o1[0];
             }
+        });
+
+        List<int[]> output = new LinkedList<>();
+
+        for(int[] p : people){
+            output.add(p[1], p);
         }
 
-        return people;
+        return output.toArray(new int[people.length][2]);
     }
 
 }

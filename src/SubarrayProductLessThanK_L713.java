@@ -2,10 +2,10 @@ public class SubarrayProductLessThanK_L713 {
     public static void main(String[] args) {
         int[] nums = new int[]{10, 5, 2, 6};
         int k = 100;
-        System.out.println(numSubarrayProductLessThanK(nums, k));
+        System.out.println(numSubArrayProductLessThanK(nums, k));
     }
 
-    public static int numSubarrayProductLessThanK(int[] nums, int k) {
+    public static int numSubArrayProductLessThanK(int[] nums, int k) {
         int count = 0;
         if (nums == null || nums.length == 0) {
             return count;

@@ -6,24 +6,8 @@ public class StringRotateMatch {
         System.out.println(isRotatedStringMatch(s1, s2));
     }
 
-    private static boolean isRotatedStringMatch(String s1, String s2) {
-        if(s1.length() != s2.length()){
-            return false;
-        }
-        
-        int pivot=s1.length() - 1;
-        while(pivot >= 0 ){
-            if(s1.charAt(pivot) != s2.charAt(s2.length() - 1 - pivot)){
-                break;
-            }else{
-                pivot--;
-            }
-        }
-        System.out.println(pivot);
-        if(s1.substring(0, pivot).equals(s1.substring(pivot))){
-            return true;
-        }
-        return false;
+    private static boolean isRotatedStringMatch(String A, String B) {
+        return A.length() == B.length() && (A + A).contains(B);
     }
 }
 

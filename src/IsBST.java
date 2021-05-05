@@ -9,12 +9,14 @@ public class IsBST {
         System.out.println(isBST(root, null, null));
     }
 
-    private static boolean isBST(TreeNode node, Integer min, Integer max) {
-        if(node == null)
+    private static boolean isBST(TreeNode node, Integer lower, Integer upper) {
+        if(node == null){
             return true;
-        
-        if((min != null && node.val <= min) || (max != null && max < node.val))
-            return false;
-        return isBST(node.left, min, node.val) && isBST(node.right, node.val, max);
+        }
+
+        if(lower != null && node.val <= lower) return false;
+        if(upper != null && node.val >= upper) return false;
+
+        return isBST(node.left, lower, node.val) && isBST(node.right, node.val, upper);
     }
 }

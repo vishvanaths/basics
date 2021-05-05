@@ -45,7 +45,7 @@ public class WallsAndGates_L286 {
                     continue;
                 }
                 rooms[nRow][nColumn] = rooms[gRow][gColumn] + 1;
-                q.add(new Integer[]{ nRow, gColumn });
+                q.add(new Integer[]{ nRow, nColumn });
             }
         }
     }
