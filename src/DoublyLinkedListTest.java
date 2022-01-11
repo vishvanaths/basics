@@ -64,7 +64,7 @@ class DoublyLinkedList{
     }
 }
 
-class DNode{
+class  DNode{
     int data;
     DNode next, previous;
 

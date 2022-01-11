@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class AccountsMerge {
+public class AccountsMerge_L721 {
     public static void main(String[] args) {
         String[][]accounts = {{"John", "johnsmith@mail.com", "john00@mail.com"},
                 {"John", "johnnybravo@mail.com"},
