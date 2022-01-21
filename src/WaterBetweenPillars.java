@@ -35,23 +35,23 @@ public class WaterBetweenPillars {
             if (heights[maxHeightIdx] < heights[i]) maxHeightIdx = i;
         }
 
-        //System.out.println("MAX IDX: " + maxHeightIdx);
+        System.out.println("MAX IDX: " + maxHeightIdx);
 
         int front;
         int back;
         for (front = 0; front < maxHeightIdx; front++) {
             // check if currently a peak
             if (heights[front] > heights[front + 1]) {
-                //System.out.println("VALLEY START: " + front);
+                System.out.println("VALLEY START: " + front);
                 // count rain until reach the same height or maxHeightIdx
                 back = front + 1;
                 while (back <= maxHeightIdx && heights[front] > heights[back]) {
-                    //System.out.println("Water at " + back + ": " + (heights[front] - heights[back]));
+                    System.out.println("Water at " + back + ": " + (heights[front] - heights[back]));
                     count += heights[front] - heights[back];
                     back++;
                 }
                 front = back - 1;
-                //System.out.println("VALLEY END: " + front);
+                System.out.println("VALLEY END: " + front);
             }
         }
 
@@ -59,16 +59,16 @@ public class WaterBetweenPillars {
         for (back = heights.length - 1; back > maxHeightIdx; back--) {
             // check if currently a peak
             if (heights[back] > heights[back - 1]) {
-                //System.out.println("VALLEY START: " + back);
+                System.out.println("VALLEY START: " + back);
                 // count rain until reach the same height or maxHeightIdx
                 front = back - 1;
                 while (front >= maxHeightIdx && heights[back] > heights[front]) {
-                    //System.out.println("Water at " + front + ": " + (heights[back] - heights[front]));
+                    System.out.println("Water at " + front + ": " + (heights[back] - heights[front]));
                     count += heights[back] - heights[front];
                     front--;
                 }
                 back = front + 1;
-                //System.out.println("VALLEY END: " + back);
+                System.out.println("VALLEY END: " + back);
             }
         }
 
