@@ -5,51 +5,26 @@ class BillionUsers_facebook {
 
     // Add any helper functions you may need here
 
-
     int b = 1_000_000_000;
     int getBillionUsersDay(float[] growthRates) {
-        int right = getUpperBound(growthRates), left = right / 2;
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            double total = getTotal(growthRates, mid);
-            if (total < b) {
-                left = mid + 1;
-            } else {
-                right = mid;
+        int end = 2000;
+        int start = 1;
+
+        while(start < end){
+            int mid = (start+end)/2;
+            double total =0;
+            for(float gr : growthRates){
+                total += Math.pow(gr, mid);
+            }
+
+            if(b < total){
+                end = mid;
+            }else{
+                start = mid + 1;
             }
         }
-
-        return left;
+        return start;
     }
-
-    private int getUpperBound(float[] growthRates) {
-        int u = 1;
-        while (true) {
-            double total = getTotal(growthRates, u);
-            if (total >= b) {
-                return u;
-            } else {
-                u *= 2;
-            }
-        }
-    }
-
-    private double getTotal(float[] growthRates, int day) {
-        double total = 0;
-        for (int i = 0; total < b && i < growthRates.length; i++) {
-            total += Math.pow(growthRates[i], day);
-        }
-        return total;
-    }
-
-
-
-
-
-
-
-
-
 
 
     // These are the tests we use to determine if the solution is correct.
