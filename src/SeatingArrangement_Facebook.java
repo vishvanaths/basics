@@ -22,10 +22,10 @@ class SeatingArrangement_Facebook {
         }
 
         int awkwardnessIndex = 0;
-        for(int i=0; i<arr.length-1; i++){
-            awkwardnessIndex += Math.abs(arr[i] - arr[i+1]);
+        for(int i=0; i<N-1; i++){
+            awkwardnessIndex = Math.max(awkwardnessIndex, Math.abs(nArr[i] - nArr[i+1]));
         }
-        awkwardnessIndex += Math.abs(arr[0] - arr[arr.length - 1]);
+        awkwardnessIndex = Math.max(awkwardnessIndex,Math.abs(nArr[0] - nArr[N - 1]));
 
         return awkwardnessIndex;
     }
