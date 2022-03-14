@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class RemoveMinimumParanthesis {
     public static void main(String[] args) {
-        String s = "lee(t(c)o)de)";
+        String s = "(a(b(c)d)";
         System.out.println(minRemoveToMakeValid(s));
     }
 
@@ -15,10 +15,10 @@ public class RemoveMinimumParanthesis {
 
         char[] chars = s.toCharArray();
         Set<Integer> indexToRemove = new HashSet<>();
-        Stack<Character> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         for(int i=0; i<chars.length; i++){
             if(chars[i] == '('){
-               stack.push('(');
+               stack.push(i);
             }else if(chars[i] == ')'){
                 if(stack.isEmpty()) {
                     indexToRemove.add(i);
@@ -27,7 +27,7 @@ public class RemoveMinimumParanthesis {
                 }
             }
         }
-
+        while (!stack.isEmpty()) indexToRemove.add(stack.pop());
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<chars.length; i++){
            if(!indexToRemove.contains(i)){
