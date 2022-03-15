@@ -2,10 +2,18 @@ import java.util.*;
 
 public class AccountsMerge_L721 {
     public static void main(String[] args) {
-        String[][]accounts = {{"John", "johnsmith@mail.com", "john00@mail.com"},
+        String[][]accountsArr = {{"John", "johnsmith@mail.com", "john00@mail.com"},
                 {"John", "johnnybravo@mail.com"},
                 {"John", "johnsmith@mail.com", "john_newyork@mail.com"}, {"Mary", "mary@mail.com"}};
-        //System.out.println(accountsMerge(accounts));
+        List<List<String>> accounts = new ArrayList<>();
+        for(int i=0; i<accountsArr.length; i++){
+            List<String> accountInfo = new ArrayList<>();
+            for(int j=0; j< accountsArr[i].length; j++){
+                accountInfo.add(accountsArr[i][j]);
+            }
+            accounts.add(accountInfo);
+        }
+        System.out.println(accountsMerge(accounts));
     }
 
     public static List<List<String>> accountsMerge(List<List<String>> accounts) {
@@ -28,7 +36,7 @@ public class AccountsMerge_L721 {
                 List<String> account = new ArrayList<>();
                 dfs(emailKey, account, seen, graph);
                 Collections.sort(account);
-                account.add(emailToName.get(emailKey));
+                account.add(0,emailToName.get(emailKey));
                 results.add(account);
             }
         }
