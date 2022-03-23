@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class RepeatedDNASequences_L183 {
+public class RepeatedDNASequences_L187 {
     public static void main(String[] args) {
         String s = "AAAAAAAAAAA";
         System.out.println(findRepeatedDnaSequences_MinMap(s));

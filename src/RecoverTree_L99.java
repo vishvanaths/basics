@@ -1,4 +1,4 @@
-public class RecoverTree {
+public class RecoverTree_L99 {
     TreeNode pre = null, x = null, y = null;
     public void recoverTree(TreeNode root) {
         if (root == null) return;

@@ -20,14 +20,14 @@ class StackArray{
             }
             break;
             case "B" : {
-                if(stackATop < 2 * STACK_SIZE/3){
-                    arrayStack[stackATop++] = element;
+                if(stackBTop < 2 * STACK_SIZE/3){
+                    arrayStack[stackBTop++] = element;
                 }
             }
             break;
             case "C" : {
-                if(stackATop <  STACK_SIZE){
-                    arrayStack[stackATop++] = element;
+                if(stackCTop <  STACK_SIZE){
+                    arrayStack[stackCTop++] = element;
                 }
             }
             break;
