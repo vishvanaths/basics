@@ -4,8 +4,26 @@ public class SortedArraySortedSquares {
 
         System.out.println(printArray(sortedSquares(arr)));
     }
+    //Faster
+    private static  int[] sortedSquares(int[] nums) {
+        int[] results = new int[nums.length];
 
-    private static int[] sortedSquares(int[] arr) {
+        int start = 0;
+        int end = nums.length -1;
+        int ptr = nums.length -1;
+        while(ptr >=0 ){
+            if(Math.abs(nums[start]) < Math.abs(nums[end])){
+                results[ptr--] = nums[end] * nums[end];
+                end--;
+            }else{
+                results[ptr--] = nums[start] * nums[start];
+                start++;
+            }
+        }
+        return results;
+    }
+
+    private static int[] sortedSquares1(int[] arr) {
         if(arr == null || arr.length == 0){
             return arr;
         }
