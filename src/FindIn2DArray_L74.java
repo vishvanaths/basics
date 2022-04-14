@@ -40,7 +40,19 @@ public class FindIn2DArray_L74 {
         return false;
     }
 }
-
+//Good solution
+/**
+ *         int i = 0, j = matrix[0].length - 1;
+ *         while(i < matrix.length && j >= 0) {
+ *         if(matrix[i][j] == target)
+ *           return true;
+ *         else if(matrix[i][j] > target)
+ *           j --;
+ *         else if(matrix[i][j] < target)
+ *           i ++;
+ *         }
+ *         return false;
+ */
 /**
  * 74. Search a 2D Matrix
  * Medium
