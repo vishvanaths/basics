@@ -1,8 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 public class CandyCrush1D_Bloomberg {
     public static void main(String[] args) {
-        System.out.println("crushed candy:" + candyCrush1D("aaabbbacd"));
+        Map<String, Integer> m = new HashMap<>();
+        for(int i=0; i< 100; i++){
+            m.merge("hmm", 1, Integer::sum);
+        }
+        System.out.println(m);
+        String str = "aaabbbacd";
+        System.out.println("crushed candy[" + str + "]:" + candyCrush1D(str));
     }
 
     public static String candyCrush1D(String crsuhit){
