@@ -1,26 +1,40 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 public class AutoComplete {
     private static final List<String> DICTIONARY = new ArrayList<>();
     private static Map<Character, Trie> tries = new HashMap<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String input = "amazed,amused,amtrack,annoyed,ancesstor,astronaut, astronomy";
-
-        createTrie(input.split(","));
-        System.out.println(getAutocompleteList("ancie"));
+        Instant load = Instant.now();
+        createTrie();
+        Instant start = Instant.now();
+        System.out.println(getAutocompleteList("con"));
+        Instant end = Instant.now();
+        Duration loadTime = Duration.between(load, start);
+        Duration timeElapsed = Duration.between(start, end);
+        System.out.println("Time Taken to load:" + (loadTime));
+        System.out.println("Time Taken:" + (timeElapsed));
     }
 
-    private static void createTrie(String[] split) {
-        for(String s : split){
-            Trie rootTrie = null;
-            if(!tries.containsKey(s.charAt(0))){
-                rootTrie = new Trie(s.charAt(0));
-                tries.put(s.charAt(0), rootTrie);
+    private static void createTrie() throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("d:/sparkdata/words_alpha.txt"))) {
+            String word;
+            while ((word = br.readLine()) != null) {
+                Trie rootTrie = null;
+                if(!tries.containsKey(word.charAt(0))){
+                    rootTrie = new Trie(word.charAt(0));
+                    tries.put(word.charAt(0), rootTrie);
+                }
+                rootTrie = tries.get(word.charAt(0));
+                rootTrie.getWords().add(word);
+                traverseTrie(rootTrie, word, 1);
             }
-            rootTrie = tries.get(s.charAt(0));
-            rootTrie.getWords().add(s);
-            traverseTrie(rootTrie, s, 1);
         }
     }
 
