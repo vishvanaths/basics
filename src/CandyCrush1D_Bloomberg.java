@@ -16,7 +16,7 @@ public class CandyCrush1D_Bloomberg {
     public static String candyCrush1D(String crsuhit){
         char[] crushStr = crsuhit.toCharArray();
         Stack<int[]> charStack = new Stack<>();
-        int[] currChar = new int[]{crushStr[1],1};
+        int[] currChar = new int[]{crushStr[0],1};
 
         for(int i=1;i<crushStr.length;i++){
             char c = crushStr[i];
