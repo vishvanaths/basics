@@ -22,7 +22,30 @@ public class BinaryTreeTest {
         bt.delete(22, bt.root);
         printInfoAboutTree(bt);
         
-        // System.out.println("Inorder successor of 3 : " + findInOrderSuccessor(3, bt.root));
+         System.out.println("Inorder successor of 3 : " + findInOrderSuccessor(3, bt.root));
+    }
+
+    private static TreeNode findInOrderSuccessor(int data, TreeNode node) {
+        TreeNode p = findNode(data, node);
+        TreeNode s = null;
+
+        while(node != null){
+            if(node.val <= p.val){
+                node = node.right;
+            }else{
+                s = node;
+                node = node.left;
+            }
+        }
+
+        return s;
+    }
+
+    private static TreeNode findNode(int data, TreeNode node) {
+        if(node == null) return null;
+        if(node.val == data) return node;
+        if(node.val < data) return findNode(data, node.right);
+        else return findNode(data, node.left);
     }
 
     private static void printInfoAboutTree(BinaryTree bt) {
