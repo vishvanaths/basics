@@ -19,15 +19,15 @@ public class TreeSymetric {
         if(root == null){
             return true;
         }
-        addToStack(root.left, queue);
-        return removeFromStack(root.right, queue) && queue.isEmpty();
+        addToQueue(root.left, queue);
+        return removeFromQueue(root.right, queue) && queue.isEmpty();
     }
 
-    private static boolean removeFromStack(TreeNode node, Queue<Integer> queue) {
+    private static boolean removeFromQueue(TreeNode node, Queue<Integer> queue) {
         if(node != null){
-            boolean right = removeFromStack(node.right, queue);
+            boolean right = removeFromQueue(node.right, queue);
             boolean self = queue.remove() == node.val;
-            boolean left =removeFromStack(node.left, queue);
+            boolean left = removeFromQueue(node.left, queue);
             
             return left && self && right;
         }else {
@@ -35,11 +35,11 @@ public class TreeSymetric {
         }
     }
 
-    private static void addToStack(TreeNode node, Queue<Integer> queue) {
+    private static void addToQueue(TreeNode node, Queue<Integer> queue) {
         if(node != null){
-            addToStack(node.left, queue);
+            addToQueue(node.left, queue);
             queue.add(node.val);
-            addToStack(node.right, queue);
+            addToQueue(node.right, queue);
         }
     }
 }

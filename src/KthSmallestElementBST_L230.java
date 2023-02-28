@@ -26,7 +26,7 @@ public class KthSmallestElementBST_L230 {
 
     //Better Solution
     public int kthSmallest_Iterative(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<>();
 
         while (true) {
             while (root != null) {

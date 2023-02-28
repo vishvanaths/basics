@@ -20,7 +20,7 @@ public class NumberOfProvinces_L547 {
     }
 
     public static void dfs(int[][] isConnected, boolean[] visited, int node){
-        for(int j=0; j<isConnected[0].length; j++){
+        for(int j=0; j<isConnected[node].length; j++){
             if(isConnected[node][j] == 1 && !visited[j]){
                 visited[j] = true;
                 dfs(isConnected, visited, j);
